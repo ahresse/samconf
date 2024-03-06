@@ -26,10 +26,7 @@ if(JSON_BACKEND)
 endif(JSON_BACKEND)
 
 add_subdirectory(src)
-if(UNIT_TESTS)
-  enable_testing()
-  add_subdirectory(test/utest)
-endif(UNIT_TESTS)
+add_subdirectory(test/utest)
 
 if(PACKAGING)
   include(cmake/Packing.cmake)
