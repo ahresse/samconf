@@ -131,11 +131,11 @@ def build_and_install(dependencies, args):
 def arguments():
     parser = argparse.ArgumentParser()
     parser.add_argument('-c', '--config',
-                        default=os.getenv('ELOS_DEPENDENCY_CONFIG',
+                        default=os.getenv('SAMCONF_DEPENDENCY_CONFIG',
                                           DEFAULT_USER_CONFIG),
                         help="the user config for dependencies"
                         f" (default {DEFAULT_USER_CONFIG}"
-                        " or enviroment variable ELOS_DEPENDENCY_CONFIG)")
+                        " or enviroment variable SAMCONF_DEPENDENCY_CONFIG)")
     parser.add_argument('-G', '--global', action='store_true',
                         dest='global_install',
                         help="install the dependencies globaly")
