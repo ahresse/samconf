@@ -45,7 +45,6 @@ if [ $OPTION_PACKAGE -eq 1 ]; then
 fi
 
 . "$BASE_DIR/ci/common_names.sh"
-
 CMAKE_PARAM="${CMAKE_PARAM} -DINSTALL_DIR=${DIST_DIR}"
 CMAKE_PARAM="${CMAKE_PARAM} -DCMAKE_PREFIX_PATH=${BASE_DIR}/build/deps"
 
