@@ -5,7 +5,6 @@ ARG UID=1000
 ARG GID=1000
 ARG ASMCOV_URI="not available"
 ARG CAPSTONE_VERSION=4.0.2
-ARG TABVIEW_VERSION=1.9
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update \
@@ -68,11 +67,6 @@ RUN if [ "${ASMCOV_URI}" != "not available" ]; then git clone --depth 1 ${ASMCOV
  && make -C build install; \
  fi
 
-RUN git clone --depth 1 --branch $TABVIEW_VERSION https://gitlab.com/esr/tapview.git
-RUN cd tapview \
- && sed -i '/$(INSTALL) -m 644 $(MANPAGES)/d' Makefile\
- && make install DESTDIR=/ prefix=usr
-
 USER $USER
 ENV LC_ALL=en_US.UTF-8
 ENV DOCKERBUILD=1
@@ -103,7 +97,7 @@ deb-src http://apt.llvm.org/jammy/ llvm-toolchain-jammy-16 main\n\
 ENV SPHINX_VENV="/home/$USER/.venv/"
 ENV LOG4C_RCPATH="/base/elos/src/demo/elos_log4c_demo"
 
-WORKDIR /build/samconf
+WORKDIR /build
 
 CMD /bin/bash
 

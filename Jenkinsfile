@@ -46,7 +46,7 @@ properties([gitLabConnection('GitLab')])
 
 pipeline {
   options {
-    gitlabBuilds(builds: ["samconf", "samconf: build debug", "samconf: build release", "samconf: utest debug", "samconf: utest release", "samconf: lint sources", "samconf: documentation", "samconf: coverage"])
+    gitlabBuilds(builds: ["samconf", "samconf: build dependencies", "samconf: build debug", "samconf: build release", "samconf: utest debug", "samconf: utest release", "samconf: lint sources", "samconf: documentation", "samconf: coverage"])
     buildDiscarder(logRotator(numToKeepStr: env.BRANCH_NAME == "master"? "1000": env.BRANCH_NAME == "integration"?"1000":"3"))
   }
 
@@ -69,6 +69,15 @@ pipeline {
         sh 'gcc --version'
         sh 'cmake --version'
         updateGitlabCommitStatus name: 'samconf', state: 'running'
+      }
+    }
+    stage('Dependecies') {
+      steps {
+        gitlabCommitStatus("samconf: build dependencies") {
+          sh '''#!/bin/bash -xe
+            ./ci/install_deps.py -c ci/dependencies_emlix.json
+          '''
+        }
       }
     }
 
@@ -155,7 +164,7 @@ pipeline {
       }
       post {
         success {
-          archiveArtifacts artifacts: "doc/build/**", fingerprint: true
+          archiveArtifacts artifacts: "build/doc/**", fingerprint: true
         }
       }
     }

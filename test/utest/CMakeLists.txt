@@ -1,5 +1,9 @@
 # SPDX-License-Identifier: MIT
-include(unit_test.cmake)
-
-add_subdirectory(mocks)
-add_subdirectory(samconf)
+if (UNIT_TESTS)
+  enable_testing()
+  include(unit_test.cmake)
+  add_subdirectory(samconf)
+endif (UNIT_TESTS)
+if (SAMCONF_MOCK_LIBRARY OR UNIT_TESTS)
+  add_subdirectory(mocks)
+endif (SAMCONF_MOCK_LIBRARY OR UNIT_TESTS)

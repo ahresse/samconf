@@ -1,9 +1,11 @@
 #!/bin/bash
 
-CMD_PATH=$(cd "$(dirname "$0")" && pwd)
-BASE_DIR=${CMD_PATH%/*}
-BUILD_DIR="$BASE_DIR/build/Debug"
-LICENSE_RESULT_DIR="${LINT_RESULT_DIR-${BUILD_DIR}/result/checklicense_results}"
+CMD_PATH="$(realpath "$(dirname "$0")")"
+BASE_DIR="$(realpath "$CMD_PATH/..")"
+BUILD_TYPE="${1:-Debug}"
+. "$BASE_DIR/ci/common_names.sh"
+
+LICENSE_RESULT_DIR="${LINT_RESULT_DIR-${RESULT_DIR}/checklicense_results}"
 LICENSE="MIT"
 
 FINDINGS_LOGS=$LICENSE_RESULT_DIR/findings.log
@@ -16,7 +18,7 @@ function check_for_license {
     local FINDINGS=0
     for i in $(find "$SEARCH_PATH" -type f -name "$SEARCH_PATTERN" -not -path "$BASE_DIR/build*/*"); do
         local FIRST_LINE
-        FIRST_LINE=$(head -n1 "$i")
+        FIRST_LINE="$(head -n1 "$i")"
         if ! echo "$FIRST_LINE" | grep -Eqs "$LICENSE_HEADER" ; then
             echo "invalid header in $i expected:" | tee -a "$FINDINGS_LOGS"
             echo -e "$LICENSE_HEADER\nbut found\n$FIRST_LINE\n" | tee -a "$FINDINGS_LOGS"

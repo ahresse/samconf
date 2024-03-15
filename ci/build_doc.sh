@@ -1,14 +1,14 @@
 #!/bin/bash -eu
 
-CMD_PATH=$(cd "$(dirname "$0")" && pwd)
-BASE_DIR=${CMD_PATH%/*}
+CMD_PATH="$(realpath "$(dirname "$0")")"
+BASE_DIR="$(realpath "$CMD_PATH/..")"
 
 MD_DOCUMENTAION_DIR="${BASE_DIR}/documentation"
-SAMCONF_SOURCE_SOURCE_DIR=${BASE_DIR}/src
+SAMCONF_SOURCE_SOURCE_DIR="${BASE_DIR}/src"
 
-SPHINX_SOURCE_DIR=${BASE_DIR}/doc/source
-SPHINX_BUILD_DIR=${BASE_DIR}/doc/build
-SPHINX_GENERATED_SOURCE_DIR=${BASE_DIR}/doc/source/generated
+SPHINX_SOURCE_DIR="${BASE_DIR}/doc/source"
+SPHINX_BUILD_DIR="${BASE_DIR}/build/doc"
+SPHINX_GENERATED_SOURCE_DIR="${BASE_DIR}/doc/source/generated"
 
 . "${SPHINX_VENV-${BASE_DIR}/.venv/}/bin/activate"
 
@@ -24,9 +24,11 @@ function createApiDocu() {
 
 function createDeveloperDocu() {
     cp -r "${MD_DOCUMENTAION_DIR}/images" "${SPHINX_GENERATED_SOURCE_DIR}/developer/"
-    pandoc --from gfm --to rst -o "${SPHINX_GENERATED_SOURCE_DIR}/developer/DeveloperManual.rst" \
+    pandoc --from gfm --to rst \
+	-o "${SPHINX_GENERATED_SOURCE_DIR}/developer/DeveloperManual.rst" \
 	"${MD_DOCUMENTAION_DIR}/developer.md"
-    pandoc --from gfm --to rst -o "${SPHINX_GENERATED_SOURCE_DIR}/developer/documentation.rst" \
+    pandoc --from gfm --to rst \
+	-o "${SPHINX_GENERATED_SOURCE_DIR}/developer/documentation.rst" \
 	"${MD_DOCUMENTAION_DIR}/documentation.md"
 
     echo -e "
@@ -45,6 +47,6 @@ Developer documentation
 createApiDocu
 createDeveloperDocu
 
-export PATH="${PATH}:${BASE_DIR}/build/Debug/dist/usr/local/bin"
-export LD_LIBRARY_PATH="${LD_LIBRARY_PATH-"./"}:${BASE_DIR}/build/Debug/dist/usr/local/lib"
+export PATH="${PATH}:${BASE_DIR}/build/Release/dist/usr/local/bin"
+export LD_LIBRARY_PATH="${LD_LIBRARY_PATH-"./"}:${BASE_DIR}/build/Release/dist/usr/local/lib"
 sphinx-build -b html "${SPHINX_SOURCE_DIR}" "${SPHINX_BUILD_DIR}"

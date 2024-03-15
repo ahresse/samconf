@@ -82,3 +82,9 @@ install(
 
 install(TARGETS samconf EXPORT samconfTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
 install(TARGETS samconf_interface EXPORT samconfTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
+
+include(${PROJECT_SOURCE_DIR}/cmake/pkgconfig/pkgconfig.cmake)
+create_pkgconfig(
+  REQUIRES "safu >= ${safu_VERSION}"
+  LIBS "-lsamconf"
+)

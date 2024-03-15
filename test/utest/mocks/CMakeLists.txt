@@ -75,13 +75,15 @@ write_basic_package_version_file(
     COMPATIBILITY SameMajorVersion
 )
 
-install(
-  FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/samconf/mock_samconfConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/samconf/mock_samconfConfigVersion.cmake"
-  DESTINATION
-    "${CMAKE_INSTALL_LIBDIR}/cmake/samconf"
-)
+if (SAMCONF_MOCK_LIBRARY AND INSTALL_SAMCONF_MOCK_LIBRARY)
+  install(
+    FILES
+      "${CMAKE_CURRENT_BINARY_DIR}/samconf/mock_samconfConfig.cmake"
+      "${CMAKE_CURRENT_BINARY_DIR}/samconf/mock_samconfConfigVersion.cmake"
+    DESTINATION
+      "${CMAKE_INSTALL_LIBDIR}/cmake/samconf"
+  )
 
-install(TARGETS mock_samconf EXPORT samconfTargets  DESTINATION ${CMAKE_INSTALL_LIBDIR})
-install(DIRECTORY samconf/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/samconf FILES_MATCHING PATTERN "*.h")
+  install(TARGETS mock_samconf EXPORT samconfTargets  DESTINATION ${CMAKE_INSTALL_LIBDIR})
+  install(DIRECTORY samconf/ DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/samconf FILES_MATCHING PATTERN "*.h")
+endif (SAMCONF_MOCK_LIBRARY AND INSTALL_SAMCONF_MOCK_LIBRARY)

@@ -15,6 +15,7 @@ b
 bld
 **/build
 **/build-*
+doc/source/generated
 r
 release
 *.swp
