@@ -14,7 +14,7 @@ default:
       - "docker"
 
 before_script:
-  - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+  - apk add --update curl bash jq && rm -rf /var/cache/apk/*
   - docker info
   - ip a
   - env | sort
