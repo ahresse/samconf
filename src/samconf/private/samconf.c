@@ -462,3 +462,36 @@ samconfConfigStatusE_t samconfConfigGetReal(const samconfConfig_t *root, const c
 int samconfInitConfig() {
     return 0;
 }
+
+const char *samconfConfigGetStringOr(const samconfConfig_t *root, const char *path, const char *defaultValue) {
+    const char *result = NULL;
+    samconfConfigStatusE_t status = samconfConfigGetString(root, path, &result);
+    if (status != SAMCONF_CONFIG_OK) {
+        result = defaultValue;
+    }
+    return result;
+}
+bool samconfConfigGetBoolOr(const samconfConfig_t *root, const char *path, bool defaultValue) {
+    bool result;
+    samconfConfigStatusE_t status = samconfConfigGetBool(root, path, &result);
+    if (status != SAMCONF_CONFIG_OK) {
+        result = defaultValue;
+    }
+    return result;
+}
+int32_t samconfConfigGetInt32Or(const samconfConfig_t *root, const char *path, int32_t defaultValue) {
+    int32_t result;
+    samconfConfigStatusE_t status = samconfConfigGetInt32(root, path, &result);
+    if (status != SAMCONF_CONFIG_OK) {
+        result = defaultValue;
+    }
+    return result;
+}
+double samconfConfigGetRealOr(const samconfConfig_t *root, const char *path, double defaultValue) {
+    double result;
+    samconfConfigStatusE_t status = samconfConfigGetReal(root, path, &result);
+    if (status != SAMCONF_CONFIG_OK) {
+        result = defaultValue;
+    }
+    return result;
+}

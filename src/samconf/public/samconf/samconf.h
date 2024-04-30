@@ -25,5 +25,9 @@ samconfConfigStatusE_t samconfConfigSetInt(samconfConfig_t *config, int64_t intV
 samconfConfigStatusE_t samconfConfigSetBool(samconfConfig_t *config, bool value);
 samconfConfigStatusE_t samconfConfigSetReal(samconfConfig_t *config, double value);
 int samconfInitConfig();
+const char *samconfConfigGetStringOr(const samconfConfig_t *root, const char *path, const char *defaultValue);
+bool samconfConfigGetBoolOr(const samconfConfig_t *root, const char *path, bool defaultValue);
+int32_t samconfConfigGetInt32Or(const samconfConfig_t *root, const char *path, int32_t defaultValue);
+double samconfConfigGetRealOr(const samconfConfig_t *root, const char *path, double defaultValue);
 
 __END_DECLS
