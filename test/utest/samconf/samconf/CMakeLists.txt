@@ -2,6 +2,7 @@
 add_subdirectory(samconfInitConfig)
 add_subdirectory(samconfConfigGet)
 add_subdirectory(samconfConfigGetString)
+add_subdirectory(samconfConfigGetStringOr)
 add_subdirectory(samconfConfigSetString)
 add_subdirectory(samconfConfigGetBool)
 add_subdirectory(samconfConfigGetBoolOr)
