@@ -1,0 +1,64 @@
+Source: samconf
+Section: admin
+Priority: optional
+Maintainer: Isaac True <isaac.true@emlix.com>
+Build-Depends:
+ debhelper-compat (= 13),
+ cmake,
+ git,
+ libcmocka-dev,
+ libsafu-dev,
+ libcmocka-mocks-dev,
+ cmocka-extensions-dev,
+ pkg-config,
+Rules-Requires-Root: no
+Standards-Version: 4.6.0.1
+Homepage: https://github.com/Elektrobit/samconf
+Vcs-Browser: https://github.com/Elektrobit/samconf
+Vcs-Git: https://github.com/Elektrobit/samconf
+
+Package: samconf-tools
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Tools for signed and mergable configuration
+ It stands for signed and mergable configuration. It is used by elos. The
+ goal of the library is to manage program configuration options from various
+ sources including support for verification of the configuration sources.
+ .
+ Package containing tools.
+
+Package: libsamconf0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+Description: Signed and mergable configuration
+ It stands for signed and mergable configuration. It is used by elos. The
+ goal of the library is to manage program configuration options from various
+ sources including support for verification of the configuration sources.
+
+Package: libsamconf-dev
+Architecture: any
+Depends:
+ ${misc:Depends},
+ libsamconf0 (= ${binary:Version}),
+ libsafu-dev,
+Description: Development package for signed and mergable configuration
+ It stands for signed and mergable configuration. It is used by elos. The
+ goal of the library is to manage program configuration options from various
+ sources including support for verification of the configuration sources.
+ .
+ Development package.
+
+Package: samconf-doc
+Architecture: all
+Depends:
+ ${misc:Depends},
+Description: Documentation package for signed and mergable configuration
+ It stands for signed and mergable configuration. It is used by elos. The
+ goal of the library is to manage program configuration options from various
+ sources including support for verification of the configuration sources.
+ .
+ Documentation package.

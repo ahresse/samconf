@@ -1,0 +1,2 @@
+usr/lib/*/libsamconf.so.*
+usr/lib/*/libmock_samconf.so.*

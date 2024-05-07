@@ -1,0 +1,41 @@
+samconf (0.52.4-5) unstable; urgency=medium
+
+  * Update gbp.conf with the new branch names.
+
+ -- Isaac True <isaac.true@emlix.com>  Tue, 07 May 2024 15:54:19 +0200
+
+samconf (0.52.4-4) unstable; urgency=medium
+
+  * Remove the following packages from the build dependencies as they are now
+    pulled in by libcmocka-mocks-dev:
+     - libssl-dev
+     - libjson-c-dev
+     - libmnl-dev
+
+ -- Isaac True <isaac.true@emlix.com>  Tue, 07 May 2024 15:18:18 +0200
+
+samconf (0.52.4-3) unstable; urgency=medium
+
+  * Add the following packages to the build dependencies:
+      - libssl-dev
+      - libjson-c-dev
+      - libcmocka-mocks-dev
+      - libsafu-dev
+      - cmocka-extensions-dev
+      - pkg-config
+      - libmnl-dev
+  * Add libsafu-dev to the dependencies for libsamconf-dev.
+
+ -- Isaac True <isaac.true@emlix.com>  Tue, 07 May 2024 14:52:57 +0200
+
+samconf (0.52.4-2) unstable; urgency=medium
+
+  * Add gbp.conf.
+
+ -- Isaac True <isaac.true@emlix.com>  Tue, 07 May 2024 14:24:50 +0200
+
+samconf (0.52.4-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Isaac True <isaac.true@emlix.com>  Mon, 06 May 2024 16:28:11 +0200
