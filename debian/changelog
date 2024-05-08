@@ -1,3 +1,9 @@
+samconf (0.52.4-7) unstable; urgency=medium
+
+  * Split libmock-smaconf0 libraries into their own package.
+
+ -- Isaac True <isaac.true@emlix.com>  Wed, 08 May 2024 15:08:02 +0200
+
 samconf (0.52.4-6) unstable; urgency=medium
 
   * Add the following build dependencies:
