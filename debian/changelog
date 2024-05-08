@@ -2,6 +2,7 @@ samconf (0.52.4-7) unstable; urgency=medium
 
   * Split libmock-smaconf0 libraries into their own package.
   * Clean up generated documentation before building.
+  * Do not ship platuml source files.
 
  -- Isaac True <isaac.true@emlix.com>  Wed, 08 May 2024 15:08:02 +0200
 
