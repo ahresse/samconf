@@ -238,8 +238,11 @@ samconfConfigStatusE_t samconfConfigGet(const samconfConfig_t *root, const char 
     size_t childItr = 0;
     size_t childCount = 0;
 
-    if (!root || !root->children || !path || !result) {
+    if (!root || !path || !result) {
         return SAMCONF_CONFIG_ERROR;
+    }
+    if (!root->children) {
+        return SAMCONF_CONFIG_NOT_FOUND;
     }
     const samconfConfig_t *node = *(root->children);
     const samconfConfig_t *parent = root;
