@@ -101,6 +101,7 @@ elos is an  integrated part of EB corbos Linux – built on Ubuntu is an open-so
 * Daniel Glöckner
 * Fabian Godehardt
 * Friedrich Schwedler
+* Isaac True
 * Joerg Vehlow
 * Maryniuk Bogdan
 * Rainer Müller
