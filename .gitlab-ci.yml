@@ -4,19 +4,20 @@ stages:
   - test
 
 default:
-  image: docker:24-dind
+  image: docker:latest
   services:
-    - name: docker:24-dind
+    - name: docker:dind
       alias: docker
+      variables:
+        DOCKER_TLS_CERTDIR: ""
   tags:
-      - "shell"
+      - "docker"
 
 before_script:
   - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
   - docker info
   - ip a
-  - ss -antup
-  - env
+  - env | sort
 
 build-dependencies:
   stage: build
