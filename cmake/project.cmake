@@ -25,6 +25,9 @@ macro(project_set_environment)
   option(UNIT_TESTS "Build unit tests" ${SAMCONF_BUILD_DEFAULTS})
   option(INSTALL_UNIT_TESTS "Install unit tests" ${UNIT_TESTS})
 
+  option(SAMCONF_TEST_UTILS "Build utility library for easy unit tests" ${UNIT_TESTS})
+  option(INSTALL_SAMCONF_TEST_UTILS "Install unit test utility library" ${SAMCONF_TEST_UTILS})
+
   option(SAMCONF_MOCK_LIBRARY "Build the mock library" ${SAMCONF_BUILD_DEFAULTS})
   option(INSTALL_SAMCONF_MOCK_LIBRARY "Install the mock library" ${SAMCONF_MOCK_LIBRARY})
 
