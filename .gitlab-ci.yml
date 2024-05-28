@@ -147,3 +147,4 @@ build-deb-packages:
     paths:
       - ./*.deb
   needs: []
+  allow_failure: true
