@@ -29,6 +29,11 @@ if [ ! -d "$CMAKE_BUILD_DIR" ]; then
     "$CMD_PATH/build.sh" "$BUILD_TYPE"
 fi
 
+if [ "${BUILD_TYPE}" = "Debug" ]; then
+    echo "Disable detect_odr_violation on ASAN, as workaround for unit tests linking against samconf_test_utils"
+    export ASAN_OPTIONS="detect_odr_violation=0"
+fi
+
 TEST_DIR="$CMAKE_BUILD_DIR/test/utest"
 mkdir -p "$RESULT_DIR/unit_test"
 cd "$RESULT_DIR/unit_test"
