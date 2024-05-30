@@ -42,11 +42,20 @@ Description: Signed and mergable configuration
  goal of the library is to manage program configuration options from various
  sources including support for verification of the configuration sources.
 
+Package: libsamconf-test-utils0
+Architecture: any
+Depends:
+ ${misc:Depends},
+ libsamconf0 (= ${binary:Version}),
+Description: Library with convenience functions for writing tests
+ Allows you to easily create configuration mock-ups from strings if you write
+ test where samconf is used.
+
 Package: libmock-samconf0
 Architecture: any
 Depends:
  ${misc:Depends},
- ${shlibs:Depends},
+ libsamconf0 (= ${binary:Version}),
 Description: Signed and mergable configuration (mock libraries)
  It stands for signed and mergable configuration. It is used by elos. The
  goal of the library is to manage program configuration options from various
