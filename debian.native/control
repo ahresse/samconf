@@ -66,6 +66,7 @@ Description: Signed and mergable configuration (mock libraries)
  Mock libraries.
 
 Package: libsamconf-dev
+Section: libdevel
 Architecture: any
 Depends:
  ${misc:Depends},
