@@ -21,6 +21,7 @@ Vcs-Browser: https://github.com/Elektrobit/samconf
 Vcs-Git: https://github.com/Elektrobit/samconf
 
 Package: samconf-tools
+Section: utils
 Architecture: any
 Depends:
  ${misc:Depends},
@@ -54,7 +55,7 @@ Description: Library with convenience functions for writing tests
  test where samconf is used.
 
 Package: libmock-samconf0
-Section: libs
+Section: libdevel
 Architecture: any
 Depends:
  ${misc:Depends},
