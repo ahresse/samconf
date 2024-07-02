@@ -12,6 +12,7 @@ Build-Depends:
  libcmocka-mocks-dev,
  cmocka-extensions-dev,
  pkg-config,
+Build-Depends-Indep:
  pandoc,
  pandoc-plantuml-filter,
  graphviz,
