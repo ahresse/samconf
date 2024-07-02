@@ -1,7 +1,8 @@
 Source: samconf
 Section: admin
 Priority: optional
-Maintainer: Isaac True <isaac.true@emlix.com>
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: Isaac True <isaac.true@emlix.com>
 Build-Depends:
  debhelper-compat (= 13),
  cmake,
