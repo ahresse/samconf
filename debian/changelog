@@ -1,5 +1,6 @@
-samconf (0.0.1) unstable; urgency=medium
+samconf (0.53.4-0ubuntu1~ppa1) oracular; urgency=medium
 
-  * Dummy release.
+  * Intitial release (LP: #2069878).
+    Based on upstream debian.native directory
 
- -- Isaac True <isaac.true@emlix.com>  Mon, 27 May 2024 17:18:42 +0200
+ -- Alexandre Esse <alexandre.esse@canonical.com>  Tue, 02 Jul 2024 09:29:11 +0200
