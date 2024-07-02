@@ -18,8 +18,6 @@ Build-Depends:
 Rules-Requires-Root: no
 Standards-Version: 4.6.0.1
 Homepage: https://github.com/Elektrobit/samconf
-Vcs-Browser: https://github.com/Elektrobit/samconf
-Vcs-Git: https://github.com/Elektrobit/samconf
 
 Package: samconf-tools
 Section: utils
