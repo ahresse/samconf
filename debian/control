@@ -11,7 +11,7 @@ Build-Depends:
  libsafu-dev,
  libcmocka-mocks-dev,
  cmocka-extensions-dev,
- pkg-config,
+ pkgconf,
 Build-Depends-Indep:
  pandoc,
  pandoc-plantuml-filter,
