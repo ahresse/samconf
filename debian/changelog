@@ -2,5 +2,13 @@ samconf (0.53.4-0ubuntu1~ppa1) oracular; urgency=medium
 
   * Intitial release (LP: #2069878).
     Based on upstream debian.native directory
+  * Update maintainer to Ubuntu Developers.
+  * Remove vcs fields from control file.
+  * Introduce debian/clean.
+  * Introduce debian/watch.
+  * Generating doc only for Indep.
+  * Fix pkgconfig package name.
+  * Fix Elektrobit copyright name.
+  * Set libmock-samconf0 section to libs.
 
  -- Alexandre Esse <alexandre.esse@canonical.com>  Tue, 02 Jul 2024 09:29:11 +0200
