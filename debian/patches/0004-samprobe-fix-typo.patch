@@ -1,6 +1,7 @@
 From: Alexandre Esse <alexandre.esse@canonical.com>
 Date: Tue, 2 Jul 2024 22:44:42 +0200
 Subject: samprobe: fix typo
+Forwarded: https://github.com/Elektrobit/samconf/pull/6
 
 Signed-off-by: Alexandre Esse <alexandre.esse@canonical.com>
 ---
