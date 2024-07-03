@@ -1,6 +1,7 @@
 From: Alexandre Esse <alexandre.esse@canonical.com>
 Date: Fri, 7 Jun 2024 13:17:19 +0200
 Subject: signature.sh: update script name references
+Forwarded: https://github.com/Elektrobit/samconf/pull/2
 
 Signed-off-by: Alexandre Esse <alexandre.esse@canonical.com>
 ---
