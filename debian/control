@@ -55,7 +55,7 @@ Description: Library with convenience functions for writing tests
  test where samconf is used.
 
 Package: libmock-samconf0
-Section: libdevel
+Section: libs
 Architecture: any
 Depends:
  ${misc:Depends},
