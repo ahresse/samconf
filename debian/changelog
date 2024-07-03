@@ -10,5 +10,15 @@ samconf (0.53.4-0ubuntu1~ppa1) oracular; urgency=medium
   * Fix pkgconfig package name.
   * Fix Elektrobit copyright name.
   * Set libmock-samconf0 section to libs.
+  * Add patches on upstream:
+    - smoketest: fix typo
+    - samconf: fix typo
+    - samprobe: fix typo
+    - cmake: rename signature.sh to samconf-sign
+    - cmake: use PROGRAMS form for signature.sh
+    - signature.sh: update script name references
+  * Add quilt as a build dependency: fixing quilt-series-but-no-build-dep.
+  * Add README.source: fixes patch-system-but-no-source-readme lintian warning.
+  * Switch format to quilt to apply patches.
 
  -- Alexandre Esse <alexandre.esse@canonical.com>  Tue, 02 Jul 2024 09:29:11 +0200
