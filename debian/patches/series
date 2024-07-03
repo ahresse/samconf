@@ -1,0 +1,6 @@
+0001-signature.sh-update-script-name-references.patch
+0002-cmake-use-PROGRAMS-form-for-signature.sh.patch
+0003-cmake-rename-signature.sh-to-samconf-sign.patch
+0004-samprobe-fix-typo.patch
+0005-samconf-fix-typo.patch
+0006-smoketest-fix-typo.patch

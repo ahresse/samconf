@@ -1,0 +1,33 @@
+From: Alexandre Esse <alexandre.esse@canonical.com>
+Date: Fri, 7 Jun 2024 13:17:19 +0200
+Subject: signature.sh: update script name references
+
+Signed-off-by: Alexandre Esse <alexandre.esse@canonical.com>
+---
+ src/signature.sh | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
+
+diff --git a/src/signature.sh b/src/signature.sh
+index 39c4877..7f80643 100755
+--- a/src/signature.sh
++++ b/src/signature.sh
+@@ -4,14 +4,16 @@
+ # Create an signature file for a given file path argument
+ set -e
+ 
++SCRIPT_NAME=$(basename "$0")
++
+ help () {
+-    echo "signature.sh – manage samconf signatures"
++    echo "${SCRIPT_NAME} – manage samconf signatures"
+     echo
+     echo "sign a given file with private key:"
+-    echo "  $>signature.sh <valid_path> <private key path>"
++    echo "  $>${SCRIPT_NAME} <valid_path> <private key path>"
+     echo
+     echo "create a key pair to use with samconf:"
+-    echo "  $>signature.sh create_keys <output directory> <keyname>"
++    echo "  $>${SCRIPT_NAME} create_keys <output directory> <keyname>"
+ }
+ 
+ signfile () {

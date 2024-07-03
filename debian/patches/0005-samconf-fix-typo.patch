@@ -1,0 +1,22 @@
+From: Alexandre Esse <alexandre.esse@canonical.com>
+Date: Tue, 2 Jul 2024 22:45:31 +0200
+Subject: samconf: fix typo
+
+Signed-off-by: Alexandre Esse <alexandre.esse@canonical.com>
+---
+ src/samconf/private/samconf.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/samconf/private/samconf.c b/src/samconf/private/samconf.c
+index 6d4658f..a1130dd 100644
+--- a/src/samconf/private/samconf.c
++++ b/src/samconf/private/samconf.c
+@@ -99,7 +99,7 @@ samconfConfigStatusE_t samconfLoad(const char *location, bool enforceSignature,
+     bool isSigned;
+ 
+     if (config == NULL) {
+-        safuLogErr("Invalid Call to samconfLoad, unintialized configuration");
++        safuLogErr("Invalid Call to samconfLoad, uninitialized configuration");
+         return SAMCONF_CONFIG_ERROR;
+     }
+ 

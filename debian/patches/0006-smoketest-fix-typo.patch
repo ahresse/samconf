@@ -1,0 +1,22 @@
+From: Alexandre Esse <alexandre.esse@canonical.com>
+Date: Tue, 2 Jul 2024 22:45:49 +0200
+Subject: smoketest: fix typo
+
+Signed-off-by: Alexandre Esse <alexandre.esse@canonical.com>
+---
+ test/smoketest/smoketest.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/test/smoketest/smoketest.sh b/test/smoketest/smoketest.sh
+index ad8f3e2..a62a4eb 100755
+--- a/test/smoketest/smoketest.sh
++++ b/test/smoketest/smoketest.sh
+@@ -37,7 +37,7 @@ function smoketest_simple_config {
+     echo "Smoketest comparing output ${RESULT_DIR}/simple_config_output.txt with ${RESULT_DIR}/simple_config_nosign_output.txt"
+     output_diff=$(diff -w ${RESULT_DIR}/simple_config_output.txt ${RESULT_DIR}/simple_config_nosign_output.txt || echo "diff returned: $?")
+     if [ -n "$output_diff" ]; then
+-        echo "Problems occured while comparing the client output:"
++        echo "Problems occurred while comparing the client output:"
+         echo -e "$output_diff"
+         error_exit "Test failed"
+     fi

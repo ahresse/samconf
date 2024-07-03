@@ -1,0 +1,26 @@
+From: Alexandre Esse <alexandre.esse@canonical.com>
+Date: Fri, 7 Jun 2024 13:41:23 +0200
+Subject: cmake: rename signature.sh to samconf-sign
+
+Following Debian policy:
+"When scripts are installed into a directory in the system PATH:
+the script name should not include an extension such as .sh"
+see: https://www.debian.org/doc/debian-policy/ch-files.html#s-scripts
+
+Signed-off-by: Alexandre Esse <alexandre.esse@canonical.com>
+---
+ src/CMakeLists.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index e91135f..c71ab99 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -10,5 +10,6 @@ add_subdirectory(samconf)
+ if (INSTALL_SAMCONF_TOOLS)
+   install(PROGRAMS ${PROJECT_SOURCE_DIR}/src/signature.sh
+           PERMISSIONS OWNER_READ OWNER_WRITE
+-          DESTINATION ${CMAKE_INSTALL_BINDIR})
++          DESTINATION ${CMAKE_INSTALL_BINDIR}
++          RENAME samconf-sign)
+ endif (INSTALL_SAMCONF_TOOLS)
