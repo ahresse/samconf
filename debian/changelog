@@ -1,4 +1,4 @@
-samconf (0.53.4-0ubuntu1~ppa1) oracular; urgency=medium
+samconf (0.53.4-0ubuntu1~ppa2) oracular; urgency=medium
 
   * Intitial release (LP: #2069878).
     Based on upstream debian.native directory
